@@ -1,18 +1,23 @@
 import sys
-import os
 from fastapi import FastAPI
+from pathlib import Path
 
 # Because `fastapi dev` cannot find modules in steamWS
 # ---
-current_dir: str = os.path.dirname(os.path.abspath(__file__))
-submodule_path: str = os.path.join(current_dir, "steamWS", "src")
+src_dir: Path = Path(__file__).resolve().parent.parent.parent
+submodule_root: Path = src_dir
+# For the submodule to work within itself
+submodule_path: Path = src_dir / "steamWS" / "src"
 
-if submodule_path not in sys.path:
-    sys.path.insert(0, submodule_path)
+if str(submodule_root) not in sys.path:
+    sys.path.insert(0, str(submodule_root))
+
+if str(submodule_path) not in sys.path:
+    sys.path.insert(0, str(submodule_path))
 # ---
 
-from app.steamWS.src.search.search import get_data_from_id, get_id_from_name
-from app.steamWS.src.utils.utils import GameData
+from steamWS.src.search.search import get_data_from_id, get_id_from_name
+from steamWS.src.utils.utils import GameData
 
 app = FastAPI()
 
