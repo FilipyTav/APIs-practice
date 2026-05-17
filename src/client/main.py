@@ -23,6 +23,7 @@ def fetch_game(name: str) -> dict[Any, str]:
     return {}
 
 
+print(f"Searching for '{game_name}'...")
 game_data: dict[Any, str] = fetch_game(game_name)
 if game_data:
     print("------------------------")
