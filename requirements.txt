@@ -1,1 +1,2 @@
-fastapi_new==0.0.6
+fastapi[standard]==0.136.1
+-r src/steamWS/requirements.txt
