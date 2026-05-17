@@ -18,7 +18,7 @@ Um script em Python para realizar troca de informação entre servidor e cliente
 ### 2. Instalação
 1. Clone o repositório para sua máquina:
 ```bash
-git clone https://github.com/FilipyTav/APIs-practice/
+git clone --recurse-submodules https://github.com/FilipyTav/APIs-practice/
 cd APIs-practice
 ```
 
