@@ -1,0 +1,3 @@
+[submodule "src/server/app/steamWS"]
+	path = src/server/app/steamWS
+	url = git@github.com:FilipyTav/WebScrapping-practice.git
